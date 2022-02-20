@@ -1,3 +1,45 @@
 {
-  "extends": "next/core-web-vitals"
+  "root": true,
+  "extends": [
+    "plugin:jsx-a11y/recommended",
+    "plugin:prettier/recommended",
+    "plugin:react/recommended",
+    "next/core-web-vitals"
+  ],
+  "plugins": ["jsx-a11y", "prettier"],
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": ["src"]
+      }
+    }
+  },
+  "rules": {
+    "require-yield": "warn",
+    "react/jsx-key": "error",
+    "react/jsx-uses-react": "off",
+    "react/react-in-jsx-scope": "off",
+    "jsx-a11y/click-events-have-key-events": "off",
+    "jsx-a11y/no-static-element-interactions": "off",
+    "react/no-direct-mutation-state": "error",
+    "prefer-const": "warn",
+    "no-var": "warn",
+    "react/display-name": "off",
+    "import/no-anonymous-default-export": "off",
+    "jsx-a11y/accessible-emoji": "off",
+    "jsx-a11y/media-has-caption": "off",
+    "jsx-a11y/no-noninteractive-element-interactions": "off",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": [
+      "warn",
+      {
+        "additionalHooks": "useRecoilCallback"
+      }
+    ]
+  },
+  "globals": {
+    "page": true,
+    "browser": true,
+    "context": true
+  }
 }
